@@ -151,7 +151,7 @@ def update_personaje(id):
         try:
             cursor = conn.cursor()
             cursor.execute(
-                "UPDATE personajes SET name = %s, email = %s, whatsapp = %s WHERE id = %d", (name, email, id))
+                "UPDATE personajes SET name = %s, email = %s, whatsapp = %s WHERE id = %d", (name, email, whatsapp, id))
             conn.commit()
             if cursor.rowcount > 0:
                 return jsonify({'mensaje': 'Personaje actualizado exitosamente'}), 200
